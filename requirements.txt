@@ -1,0 +1,16 @@
+dspy==2.6.27
+dspy-ai==2.6.27
+elevenlabs==2.8.1
+icrawler==0.6.10
+langchain==0.3.27
+langchain-community==0.3.27
+langchain-core==0.3.72
+langchain-huggingface==0.3.1
+langchain-qdrant==0.2.0
+nltk==3.9.1
+pypdf==5.9.0
+python-dotenv==1.1.1
+pytube==15.0.0
+qdrant-client==1.15.0
+sentence-transformers==5.0.0
+streamlit==1.47.1

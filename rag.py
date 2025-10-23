@@ -1,11 +1,9 @@
 import dspy 
 from pydantic import BaseModel, Field
-import os
 from chroma import qdrant
-from dotenv import load_dotenv
-load_dotenv()
+import streamlit as st
 
-llm = dspy.LM("gemini/gemini-2.0-flash", api_key=os.getenv("GOOGLE_API_KEY"))
+llm = dspy.LM("gemini/gemini-2.0-flash", api_key=st.secrets["GOOGLE_API_KEY"])
 
 dspy.settings.configure(lm = llm)
 
@@ -63,4 +61,5 @@ class QuizRAG(dspy.Module):
             context_text.append(str(doc.page_content))
         quiz_input = QuizInput(topic=quiz_text, context=context_text)
         prediction = self.generate_quiz(input=quiz_input)
+
         return prediction
